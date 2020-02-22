@@ -19,6 +19,7 @@ class CreateListsTable extends Migration
             $table->string('name');
             $table->string('color');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

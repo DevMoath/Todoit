@@ -19,6 +19,7 @@ class CreateTasksTable extends Migration
             $table->string('name');
             $table->boolean('completed')->default(false);
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('list_id')->references('id')->on('lists')->onDelete('cascade');
         });
