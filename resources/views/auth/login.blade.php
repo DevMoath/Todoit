@@ -1,10 +1,11 @@
+@section('title', ' | Login')
 @extends('layouts.app')
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row vh-100 justify-content-center align-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card shadow-lg">
                     <div class="card-header">{{ __('Login') }}</div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
@@ -36,6 +37,11 @@
                                     <input id="password" type="password"
                                            class="form-control @error('password') is-invalid @enderror" name="password"
                                            required autocomplete="current-password">
+                                    @if (Route::has('password.request'))
+                                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                                            {{ __('Forgot Your Password?') }}
+                                        </a>
+                                    @endif
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -59,11 +65,9 @@
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Login') }}
                                     </button>
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    @endif
+                                    <a class="btn btn-link" href="{{ route('register') }}">
+                                        {{ __('Register') }}
+                                    </a>
                                 </div>
                             </div>
                         </form>

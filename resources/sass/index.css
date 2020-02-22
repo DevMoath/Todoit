@@ -1,0 +1,126 @@
+* {
+    font-family: 'Nunito', sans-serif;
+}
+.w-90 {
+    width: 90% !important;
+}
+.w-80 {
+    width: 80% !important;
+}
+.bg-white {
+    background: #fff !important;
+}
+.border-costume {
+    border: 2px solid #CED4DA !important;
+}
+.btn-hover:hover, .btn-group-toggle .active {
+    background: #ecf0f1;
+}
+.scale-1-5 {
+    transform: scale(1.5);
+}
+.scale-1-2 {
+    transform: scale(1.2);
+}
+.bottom-0 {
+    bottom: 0;
+}
+.top-0 {
+    top: 0;
+}
+.right-0 {
+    right: 0;
+}
+.left-0 {
+    left: 0;
+}
+.z-1 {
+    z-index: 1;
+}
+.btn-lg {
+    width: 75px !important;
+    height: 75px !important;
+}
+.pointer {
+    cursor: pointer;
+}
+.rounded {
+    border-radius: 50px !important;
+}
+.animate {
+    transition: all 0.1s !important;
+    -webkit-transition: all 0.1s !important;
+}
+.action-button:active {
+    transform: translate(0, 5px) !important;
+    -webkit-transform: translate(0, 5px) !important;
+}
+.btn-link, .btn-link:hover {
+    text-decoration: none;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+input[type=checkbox] {background: 0 0;-ms-transform: scale(1.5);-moz-transform: scale(1.5);-webkit-transform: scale(1.5);-o-transform: scale(1.5);transform: scale(1.5)}
+.checked {
+    text-decoration: line-through;
+    opacity: .5;
+}
+.checked:focus {
+    text-decoration: initial;
+    opacity: 1;
+}
+input:checked ~ .task-name {
+    background-color: #2196F3;
+}
+.list-group-item {
+    border-left: 4px solid transparent !important;
+}
+#list-tab .active {
+    border-bottom: none;
+    border-radius: 0 .25rem .25rem 0 !important;
+    border-left-color: #007bff !important;
+    background: rgba(0, 123, 255, 0.1);
+    color: #0b0b0b !important;
+}
+#list-tab {
+    height: 80vh;
+    overflow-y: hidden;
+}
+#list-tab:hover {
+    overflow-y: auto;
+}
+#nav-container {
+    height: 100vh;
+}
+main {
+    margin-top: 30px;
+}
+@media (max-width: 991px) {
+    #nav-container {
+        height: auto;
+        top: 0;
+        left: 0;
+    }
+    main {
+        margin: 90px auto;
+    }
+    #list-tab {
+        height: auto;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+}
