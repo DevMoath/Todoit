@@ -11,8 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
+Route::get('test', function () {
+    return \App\User::get();
+});
+Route::view('/', 'home')->name("home");
+Route::resource('app', 'AppController');
+Route::resource('list', 'ListController');
+Route::resource('task', 'TaskController');
+Route::resource('user', 'UserController');
+Route::post('user/{id}', 'UserController@updatePassword')->name('user.updatePassword');
