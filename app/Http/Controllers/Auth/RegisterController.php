@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Lists;
+use App\Task;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -28,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/app';
 
     /**
      * Create a new controller instance.
@@ -51,9 +53,14 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name'     => ['required', 'string', 'max:50'],
-            'username' => ['required', 'string', 'max:20', 'unique:users'],
+            'username' => ['required', 'alpha_num', 'max:20', 'unique:users'],
             'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+                'confirmed'
+            ],
         ]);
     }
 
@@ -66,11 +73,32 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name'     => $data['name'],
             'username' => $data['username'],
             'email'    => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $list = Lists::create([
+            'user_id' => $user->id,
+            'name'    => 'Welcome to you',
+            'color'   => 'blue'
+        ]);
+
+        Task::insert([
+            [
+                'list_id'   => $list->id,
+                'name'      => 'First Task is to create account',
+                'completed' => true
+            ],
+            [
+                'list_id'   => $list->id,
+                'name'      => 'Second Task is to create new List and Task',
+                'completed' => false
+            ]
+        ]);
+
+        return $user;
     }
 }
