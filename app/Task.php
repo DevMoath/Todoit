@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Task extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'list_id',
         'name',
@@ -18,6 +21,6 @@ class Task extends Model
     ];
 
     protected $casts = [
-      'completed' => 'boolean'
+        'completed' => 'boolean'
     ];
 }

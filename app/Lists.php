@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Lists extends Model
 {
+    use SoftDeletes;
+    
     protected $fillable = [
         'user_id',
         'name',
@@ -17,7 +20,8 @@ class Lists extends Model
         'updated_at'
     ];
 
-    public function tasks() {
+    public function tasks()
+    {
         return $this->hasMany(Task::class, 'list_id');
     }
 }
