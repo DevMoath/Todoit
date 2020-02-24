@@ -4,20 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ListRequest;
 use App\Lists;
-use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Throwable;
 
 class ListController extends Controller
 {
-        /**
-         * ListController constructor.
-         */
-        public function __construct()
-        {
-            $this->middleware('auth');
-        }
+    /**
+     * ListController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -94,16 +93,8 @@ class ListController extends Controller
         return response()->json($list->save());
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Lists $list
-     *
-     * @return void
-     * @throws Exception
-     */
     public function destroy(Lists $list)
     {
-        dd($list->delete());
+        return response('', $list->delete() ? 200 : 400);
     }
 }
