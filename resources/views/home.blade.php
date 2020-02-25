@@ -59,7 +59,7 @@
                             <div class="card-body mx-auto text-center">
                                 <i class="fas fa-4x fa-database text-success mb-4"></i>
                                 <h3 class="h4 mb-2">@lang('Unlimited Storage')</h3>
-                                <p class="text-muted mb-0">@lang("You can create and add List/Task as much you want")</p>
+                                <p class="text-muted mb-0">@lang("You can create Lists/Tasks as much you want")</p>
                             </div>
                         </div>
                     </div>
