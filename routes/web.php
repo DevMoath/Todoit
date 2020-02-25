@@ -12,10 +12,8 @@
 */
 
 Auth::routes();
-Route::get('test', function () {
-    return \App\User::get();
-});
 Route::view('/', 'home')->name("home");
+Route::resource('suggestions', 'SuggestionController')->only('store');
 Route::resource('app', 'AppController');
 Route::resource('list', 'ListController');
 Route::resource('task', 'TaskController');
