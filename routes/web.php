@@ -11,7 +11,7 @@
 |
 */
 
-Auth::routes();
+Auth::routes(['reset' => false]);
 Route::view('/', 'home')->name("home");
 Route::resource('suggestions', 'SuggestionController')->only('store');
 Route::resource('app', 'AppController');
