@@ -1,8 +1,7 @@
 @if ($message = Session::get('success'))
     <div class="alert alert-success alert-block">
         <button type="button" class="btn btn-danger rounded animate action-button shadow float-right"
-                data-dismiss="alert"
-                aria-label="Close">
+                data-dismiss="alert" aria-label="Close">
             <i class="fas fa-times"></i>
         </button>
         <strong>{{ $message }}</strong>
@@ -12,8 +11,7 @@
 @if ($message = Session::get('error'))
     <div class="alert alert-danger alert-block">
         <button type="button" class="btn btn-danger rounded animate action-button shadow float-right"
-                data-dismiss="alert"
-                aria-label="Close">
+                data-dismiss="alert" aria-label="Close">
             <i class="fas fa-times"></i>
         </button>
         <strong>{{ $message }}</strong>
@@ -23,8 +21,7 @@
 @if ($message = Session::get('warning'))
     <div class="alert alert-warning alert-block">
         <button type="button" class="btn btn-danger rounded animate action-button shadow float-right"
-                data-dismiss="alert"
-                aria-label="Close">
+                data-dismiss="alert" aria-label="Close">
             <i class="fas fa-times"></i>
         </button>
         <strong>{{ $message }}</strong>
@@ -34,8 +31,7 @@
 @if ($message = Session::get('info'))
     <div class="alert alert-info alert-block">
         <button type="button" class="btn btn-danger rounded animate action-button shadow float-right"
-                data-dismiss="alert"
-                aria-label="Close">
+                data-dismiss="alert" aria-label="Close">
             <i class="fas fa-times"></i>
         </button>
         <strong>{{ $message }}</strong>
@@ -45,8 +41,7 @@
 @if ($errors->any())
     <div class="alert alert-danger">
         <button type="button" class="btn btn-danger rounded animate action-button shadow float-right"
-                data-dismiss="alert"
-                aria-label="Close">
+                data-dismiss="alert" aria-label="Close">
             <i class="fas fa-times"></i>
         </button>
         <ul class="list-group">

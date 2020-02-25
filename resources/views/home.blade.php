@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-10 mx-auto">
                         <div class="site-heading">
-                            @include('flash-message')
+                            @include('layouts.flash-message')
                             <h1>@lang('Todoit')</h1>
                             <span class="subheading">
                                 @lang('What you need to organize your day 😊')
@@ -116,7 +116,7 @@
                                     <i class="fab fa-github fa-3x text-secondary"></i>
                                 </h5>
                                 <a href="https://github.com/DevMoath/Todoit" class="btn btn-link btn-hover btn-block">
-                                    @Dev_Moath
+                                    @DevMoath
                                 </a>
                             </div>
                         </div>
