@@ -1,8 +1,8 @@
-<div class="modal" tabindex="-1" role="dialog" id="add_task">
+<div class="modal fade" tabindex="-1" role="dialog" id="add_task">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title my-auto">Add Task</h5>
+                <h5 class="modal-title my-auto">@lang('Add Task')</h5>
                 <button type="button" class="btn btn-danger rounded animate action-button shadow" data-dismiss="modal"
                         aria-label="Close">
                     <i class="fas fa-times"></i>
@@ -12,16 +12,16 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="hidden" name="list_id" id="list_id" value="1">
-                        <label for="task_name">Task Name</label>
+                        <label for="task_name">@lang('Task Name')</label>
                         <input type="text" class="form-control bg-transparent" placeholder="Task Name" id="task_name"
                                name="name" required>
                     </div>
                     <div class="d-flex justify-content-end">
                         <button type="button" class="btn text-primary btn-hover px-3 mx-2 rounded action-button animate"
-                                data-dismiss="modal">Close
+                                data-dismiss="modal">@lang('Close')
                         </button>
-                        <button type="submit" class="btn btn-primary rounded animate action-button px-3 mx-2 shadow">Add
-                            Task
+                        <button type="submit" class="btn btn-primary rounded animate action-button px-3 mx-2 shadow">
+                            @lang('Add Task')
                         </button>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     timer: 3000,
                     timerProgressBar: true,
                     icon: "success",
-                    title: "Task created"
+                    title: "@lang('Task created')"
                 });
                 return response.json();
             } else {
@@ -68,7 +68,7 @@
                     timer: 3000,
                     timerProgressBar: true,
                     icon: "error",
-                    title: "Task can't be created, Try again"
+                    title: "@lang("Task can't be created, Try again")"
                 });
             }
         }).then(json => {

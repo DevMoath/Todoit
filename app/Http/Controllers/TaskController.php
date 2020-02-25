@@ -49,7 +49,7 @@ class TaskController extends Controller
     public function store(TaskRequest $request)
     {
         $task = Task::create($request->validated());
-        $html = view('app.parts.tasks', compact('task'))->render();
+        $html = view('app.parts.task', compact('task'))->render();
         return response()->json(['html' => $html]);
     }
 

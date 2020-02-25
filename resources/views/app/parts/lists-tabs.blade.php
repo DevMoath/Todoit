@@ -1,8 +1,7 @@
 @if($lists->count())
     @foreach($lists as $list)
         <a class="list-group-item list-group-item-action{{ $loop->first ? ' active ' : ' ' }}text-muted rounded-0 border-left-0 border-right-0 border-top-0 mb-2"
-           data-toggle="tab" role="tab"
-           href="#list_{{ $list->id }}">
+           data-toggle="tab" role="tab" href="#list_{{ $list->id }}">
             <div class="d-flex">
                 <div class="mr-3 my-auto">
                     <i class="fas fa-circle scale-1-5"
