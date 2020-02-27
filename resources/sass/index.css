@@ -71,7 +71,6 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-input[type=checkbox] {background: 0 0;-ms-transform: scale(1.5);-moz-transform: scale(1.5);-webkit-transform: scale(1.5);-o-transform: scale(1.5);transform: scale(1.5)}
 .checked {
     text-decoration: line-through;
     opacity: .5;

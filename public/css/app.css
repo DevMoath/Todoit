@@ -250,7 +250,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-input[type=checkbox] {background: 0 0;-webkit-transform: scale(1.5);transform: scale(1.5)}
 .checked {
     text-decoration: line-through;
     opacity: .5;
