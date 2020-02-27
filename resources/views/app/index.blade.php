@@ -26,6 +26,7 @@
 
     {{-- Task Actions Model --}}
     @include('app.models.create_task')
+    @include('app.models.delete_task')
 
     {{-- App Container --}}
     <div class="container-fluid vh-100">
@@ -256,11 +257,69 @@
                             });
                         }
                     }).catch(error => console.error(error));
+                } else if (e.target.dataset.type === "delete-task") {
+                    let id = document.querySelector("#task_id_to_delete").value;
+                    fetch(`task/${id}`, {
+                        method: "delete",
+                        headers: {
+                            "Accept": "*/*",
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            _token: "{{ csrf_token() }}"
+                        })
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                $("#delete_task").modal("hide");
+                                Swal.fire({
+                                    toast: true,
+                                    position: "top-end",
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    icon: "success",
+                                    title: "@lang("Task Deleted")"
+                                });
+                                let task      = document.querySelector(`#task_${id}`);
+                                let container = task.parentElement;
+                                task.remove();
+                                if (container.children.length <= 1) {
+                                    container.innerHTML +=
+                                        "<div class='text-center mx-auto w-100 alert shadow-lg my-3 alert-dismissible fade show shadow'" +
+                                        "     role='alert'>" +
+                                        "    <div class='card-body'>" +
+                                        "        <button class='btn close float-right btn-hover rounded animate action-button' data-dismiss='alert'>" +
+                                        "            <i class='fa fa-times fa-fw'></i>" +
+                                        "        </button>" +
+                                        "        <h5 class='card-title'>@lang('Ooops')</h5>" +
+                                        "        <p class='card-text'>@lang('You don\'t have tasks.')</p>" +
+                                        "        <button type='button' onclick='document.getElementById(\"add_task_button\").click()'" +
+                                        "                class='btn btn-primary rounded animate action-button px-3 mx-2 shadow'>" +
+                                        "            @lang('Create One Now!')" +
+                                        "        </button>" +
+                                        "    </div>" +
+                                        "</div>";
+                                }
+                            } else {
+                                Swal.fire({
+                                    toast: true,
+                                    position: "top-end",
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    icon: "error",
+                                    title: "@lang("Task can't be deleted, Try again")"
+                                });
+                            }
+                        })
+                        .catch(error => console.error(error));
                 }
             });
 
             let deleteModal = $("#delete_list"),
-                editModal   = $("#edit_list");
+                editModal   = $("#edit_list"),
+                deleteTask  = $("#delete_task");
 
             deleteModal.on("show.bs.modal", function (e) {
                 document.querySelector("#list_id_to_delete").value   = e.relatedTarget.dataset.id;
@@ -272,6 +331,18 @@
             deleteModal.on("hidden.bs.modal", function (e) {
                 document.querySelector("#list_id_to_delete").value   = "";
                 document.querySelector("#delete_list kbd").innerText = "";
+            });
+
+            deleteTask.on("show.bs.modal", function (e) {
+                document.querySelector("#task_id_to_delete").value   = e.relatedTarget.dataset.id;
+                document.querySelector("#delete_task kbd").innerText = e.relatedTarget.parentElement.previousElementSibling.value;
+            });
+            deleteTask.on("shown.bs.modal", function (e) {
+                document.querySelector("#delete_task button[data-dismiss='modal']").focus();
+            });
+            deleteTask.on("hidden.bs.modal", function (e) {
+                document.querySelector("#task_id_to_delete").value   = "";
+                document.querySelector("#delete_task kbd").innerText = "";
             });
 
             editModal.on("show.bs.modal", function (e) {
