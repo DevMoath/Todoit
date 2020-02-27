@@ -23,4 +23,14 @@ class Task extends Model
     protected $casts = [
         'completed' => 'boolean'
     ];
+
+    public function complete()
+    {
+        $this->update(['completed' => true]);
+    }
+
+    public function incomplete()
+    {
+        $this->update(['completed' => false]);
+    }
 }

@@ -82,6 +82,58 @@
                 document.querySelector("#color_picker").focus();
             });
 
+            document.querySelector("main").addEventListener("click", e => {
+                if (e.target.classList.contains("check-box")) {
+                    let url, message;
+                    if (e.target.checked) {
+                        url     = `task/${e.target.dataset.id}/complete`;
+                        message = "@lang("Task Completed")";
+                    } else {
+                        url     = `task/${e.target.dataset.id}/incomplete`;
+                        message = "@lang("Task Uncompleted")";
+                    }
+                    fetch(url, {
+                        method: "put",
+                        headers: {
+                            "Accept": "*/*",
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            _token: "{{ csrf_token() }}"
+                        })
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                Swal.fire({
+                                    toast: true,
+                                    position: "top-end",
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    icon: "success",
+                                    title: message
+                                });
+                                if (e.target.checked) {
+                                    e.target.parentElement.parentElement.parentElement.children[1].classList.add("checked");
+                                } else {
+                                    e.target.parentElement.parentElement.parentElement.children[1].classList.remove("checked");
+                                }
+                            } else {
+                                Swal.fire({
+                                    toast: true,
+                                    position: "top-end",
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    icon: "error",
+                                    title: "@lang("Task can't be updated, Try again")"
+                                });
+                            }
+                        })
+                        .catch(error => console.error(error));
+                }
+            });
+
             document.querySelector("body").addEventListener("submit", e => {
                 e.preventDefault();
                 if (e.target.dataset.type === "edit") {
