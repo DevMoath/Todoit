@@ -20,10 +20,27 @@
         "lodash": "^4.17.13",
         "popper.js": "^1.16.1",
         "resolve-url-loader": "^2.3.1",
-        "sass": "^1.26.0",
+        "sass": "^1.26.1",
         "sass-loader": "^7.1.0",
         "sweetalert2": "^9.8.2",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.11"
-    }
+    },
+    "name": "todoit",
+    "description": "Todo list app",
+    "version": "1.0.0",
+    "main": "webpack.mix.js",
+    "directories": {
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DevMoath/Todoit.git"
+    },
+    "author": "Moath Alhajri",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/DevMoath/Todoit/issues"
+    },
+    "homepage": "https://github.com/DevMoath/Todoit#readme"
 }
