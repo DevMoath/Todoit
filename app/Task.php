@@ -33,4 +33,9 @@ class Task extends Model
     {
         $this->update(['completed' => false]);
     }
+
+    public function list()
+    {
+        return $this->belongsTo(Lists::class, 'list_id');
+    }
 }
