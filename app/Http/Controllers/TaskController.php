@@ -50,9 +50,9 @@ class TaskController extends Controller
         return $task->incomplete();
     }
 
-    public function update(Request $request, $id)
+    public function update(TaskRequest $request, Task $task)
     {
-        //
+        $task->update($request->validated());
     }
 
     public function destroy(Task $task)

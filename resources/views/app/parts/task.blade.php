@@ -6,11 +6,11 @@
                         {{ $task->completed ? 'checked' : '' }}>
             </div>
         </div>
-        <input type='text' value='{{ $task->name }}'
+        <input type='text' value='{{ $task->name }}' data-id="{{ $task->id }}" data-list="{{ $task->list->id }}"
                class='task-name form-control bg-transparent border-0 rounded {{ $task->completed ? 'checked' : ''}}'>
         <div class='input-group-append'>
             <button class='btn rounded btn-hover text-danger mx-1' data-id="{{ $task->id }}" data-toggle="modal"
-                    data-target="#delete_task" type='button'>
+                    data-target="#delete_task" type='button' style="z-index: 0">
                 <i class='far fa-trash-alt fa-fw scale-1-2'></i>
             </button>
         </div>
