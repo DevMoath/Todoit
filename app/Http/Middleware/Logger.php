@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class LogEveryRequest
+class Logger
 {
     /**
      * Handle an incoming request.
@@ -21,8 +21,12 @@ class LogEveryRequest
         return $next($request);
     }
 
-    public function terminate(Request $request, $response)
+    public function terminate($request, $response)
     {
-        Log::info('app.requests', ['request' => $request->all(), 'response' => $response]);
+        Log::info('app.requests', [
+            'request'  => $request->url(),
+            'data'     => $request->except(['_token', 'password', 'password-confirm']),
+            'response' => $response->getStatusCode()
+        ]);
     }
 }
