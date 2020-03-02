@@ -27,7 +27,7 @@
                 </h1>
                 <hr>
                 <p class="font-20 text-muted text-center">
-                    @lang("My name is Moath and I started develop this app to provide to people every tool they need in any To-Do list app for FREE and ease of use")
+                    @lang("My name is Moath and I start develop this app to provide the people basic tools they need in any To-Do list app for FREE and most important is easy to use")
                 </p>
             </section>
             <section class="mb-5 pb-2">
