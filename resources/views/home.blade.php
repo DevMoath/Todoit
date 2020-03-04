@@ -171,7 +171,7 @@
                     </div>
                     <div class="form-group row mb-0">
                         <div class="col-md-5 mx-auto">
-                            <button type="submit" class="btn btn-primary btn-block">
+                            <button type="submit" class="btn btn-primary btn-block animate">
                                 @lang('Send')
                             </button>
                         </div>
