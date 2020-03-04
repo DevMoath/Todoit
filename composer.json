@@ -1,14 +1,15 @@
 {
-    "name": "laravel/laravel",
+    "name": "Todoit",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Todo list app",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "Todo"
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.3",
+        "php": "^7.4",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0"
@@ -16,6 +17,7 @@
     "require-dev": {
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
+        "laravel/telescope": "2.*",
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^8.5"
     },
