@@ -43,16 +43,16 @@
                         </button>
                         <a role="button" class="btn-hover btn px-3 mx-2 rounded action-button animate"
                            href="{{ route("home") }}">
-                            <i class="fas fa-home fa-fw scale-1-5"></i>
+                            <i class="fas fa-home fa-fw text-dark scale-1-5"></i>
                         </a>
                         <a role="button" href="#" class="btn-hover btn px-3 mx-2 rounded action-button animate"
                            data-toggle="modal" data-target="#settings">
-                            <i class="fas fa-cog fa-fw scale-1-5"></i>
+                            <i class="fas fa-cog fa-fw text-primary scale-1-5"></i>
                         </a>
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
                             <button type="submit" class="btn-hover btn px-3 mx-2 rounded action-button animate">
-                                <i class="fas fa-sign-out-alt fa-fw scale-1-5"></i>
+                                <i class="fas fa-sign-out-alt fa-fw text-muted scale-1-5"></i>
                             </button>
                         </form>
                     </div>
