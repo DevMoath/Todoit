@@ -7,11 +7,13 @@
             <i class="fas fa-plus fa-2x my-2"></i>
         </button>
         <div class="dropdown-menu shadow">
-            <button class="dropdown-item mb-1 py-2" id="add_list_button" data-toggle="modal" data-target="#add_list">
-                <i class="fas fa-list-ul fa-fw mr-1"></i> @lang('Add List')
+            <button class="dropdown-item mb-1 py-2 d-flex" id="add_list_button" data-toggle="modal" data-target="#add_list">
+                <span>@lang('Add List')</span>
+                <i class="fas fa-list-ul fa-fw ml-auto my-auto"></i>
             </button>
-            <button class="dropdown-item mb-1 py-2" data-toggle="modal" id="add_task_button" data-target="#add_task">
-                <i class="far fa-check-circle fa-fw mr-1"></i> @lang('Add Task')
+            <button class="dropdown-item mb-1 py-2 d-flex" data-toggle="modal" id="add_task_button" data-target="#add_task">
+                <span>@lang('Add Task')</span>
+                <i class="far fa-check-circle fa-fw ml-auto my-auto"></i>
             </button>
         </div>
     </div>
