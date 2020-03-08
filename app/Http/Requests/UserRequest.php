@@ -26,7 +26,7 @@ class UserRequest extends FormRequest
         if ($this->isMethod('post')) {
             return [
                 'password'     => 'required',
-                'new_password' => 'required|min:8'
+                'new_password' => 'required|min:8|confirmed'
             ];
         } else {
             return [

@@ -66,14 +66,20 @@
                                 <form action="{{ route("user.updatePassword", auth()->id()) }}" method="post">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="password" class="col-form-label">@lang('Old Password')</label>
-                                        <input id="password" type="password" placeholder="*******" minlength="8"
-                                               required class="form-control" name="password">
+                                        <label for="password" class="col-form-label">@lang('Password')</label>
+                                        <input id="password" type="password" minlength="8" class="form-control"
+                                               name="password" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="new_password" class="col-form-label">@lang('New Password')</label>
-                                        <input id="new_password" type="password" placeholder="*******" minlength="8"
-                                               required class="form-control" name="new_password">
+                                        <input id="new_password" type="password" minlength="8" class="form-control"
+                                               name="new_password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password_confirmation"
+                                               class="col-form-label">@lang('Confirm Password')</label>
+                                        <input id="password_confirmation" type="password" minlength="8"
+                                               class="form-control" name="password_confirmation" required>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit"
