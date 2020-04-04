@@ -24,7 +24,8 @@
         "sass-loader": "^7.1.0",
         "sweetalert2": "^9.10.0",
         "vue": "^2.5.17",
-        "vue-template-compiler": "^2.6.11"
+        "vue-template-compiler": "^2.6.11",
+        "kind-of": ">=6.0.3"
     },
     "name": "todoit",
     "description": "Todo list app",
